@@ -1,9 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-title>Información de alumno</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <ion-card-header>
+      <ion-label>
+        <b>Nombre: </b> Nombre Apellidos
+      </ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label>
+        <b>Carnet: </b>carnet
+      </ion-label>
+      <ion-row>
+        <ion-col>
+          <ion-button size="small" fill="clear" color="success">
+            <ion-icon slot="end" name="create"></ion-icon>
+            Editar
+          </ion-button>
+          <ion-button size="small" fill="clear" color="danger">
+            <ion-icon slot="end" name="trash"></ion-icon>
+            Eliminar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

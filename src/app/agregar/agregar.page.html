@@ -1,9 +1,30 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>agregar</ion-title>
+    <ion-title>Agregar alumnos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <ion-card-content>
+      <form>
+        <ion-item>
+          <ion-label position="stacked">Agregar nombre</ion-label>
+          <ion-input placeholder="Nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Agregar apellidos</ion-label>
+          <ion-input placeholder="Apellidos"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Agregar carnet</ion-label>
+          <ion-input placeholder="Carnet"></ion-input>
+        </ion-item>
+        <ion-button expand="full" color="success">
+          <ion-icon  slot="end" name="checkmark"></ion-icon>
+          Guardar
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
