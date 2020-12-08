@@ -15,7 +15,7 @@ const routes: Routes = [
     loadChildren: () => import('./update/update.module').then( m => m.UpdatePageModule)
   },
   {
-    path: 'profile',
+    path: 'profile/:id',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   }
 ];

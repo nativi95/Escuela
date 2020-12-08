@@ -20,137 +20,19 @@
 
   </div>
   <ion-list>
-    <ion-item>
+
+    <ion-item *ngFor="let alumno of (alumnos|async)">
       <ion-label>
         <b>
           <h3>Nombre: </h3>
         </b>
-        Nombre apellido
+        {{alumno.Nombre}} {{alumno.Apellidos}}
       </ion-label>
-      <ion-button color="success">
+      <ion-button routerLink="/profile/{{alumno.IdAlumno}}" color="success">
         <ion-icon slot="end" name="search"></ion-icon>
         Ver
       </ion-button>
     </ion-item>
-    <ion-item>
-      <ion-label>
-        <b>
-          <h3>Nombre: </h3>
-        </b>
-        Nombre apellido
-      </ion-label>
-      <ion-button color="success">
-        <ion-icon slot="end" name="search"></ion-icon>
-        Ver
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <b>
-          <h3>Nombre: </h3>
-        </b>
-        Nombre apellido
-      </ion-label>
-      <ion-button color="success">
-        <ion-icon slot="end" name="search"></ion-icon>
-        Ver
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <b>
-          <h3>Nombre: </h3>
-        </b>
-        Nombre apellido
-      </ion-label>
-      <ion-button color="success">
-        <ion-icon slot="end" name="search"></ion-icon>
-        Ver
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <b>
-          <h3>Nombre: </h3>
-        </b>
-        Nombre apellido
-      </ion-label>
-      <ion-button color="success">
-        <ion-icon slot="end" name="search"></ion-icon>
-        Ver
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <b>
-          <h3>Nombre: </h3>
-        </b>
-        Nombre apellido
-      </ion-label>
-      <ion-button color="success">
-        <ion-icon slot="end" name="search"></ion-icon>
-        Ver
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <b>
-          <h3>Nombre: </h3>
-        </b>
-        Nombre apellido
-      </ion-label>
-      <ion-button color="success">
-        <ion-icon slot="end" name="search"></ion-icon>
-        Ver
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <b>
-          <h3>Nombre: </h3>
-        </b>
-        Nombre apellido
-      </ion-label>
-      <ion-button color="success">
-        <ion-icon slot="end" name="search"></ion-icon>
-        Ver
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <b>
-          <h3>Nombre: </h3>
-        </b>
-        Nombre apellido
-      </ion-label>
-      <ion-button color="success">
-        <ion-icon slot="end" name="search"></ion-icon>
-        Ver
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <b>
-          <h3>Nombre: </h3>
-        </b>
-        Nombre apellido
-      </ion-label>
-      <ion-button color="success">
-        <ion-icon slot="end" name="search"></ion-icon>
-        Ver
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <b>
-          <h3>Nombre: </h3>
-        </b>
-        Nombre apellido
-      </ion-label>
-      <ion-button color="success">
-        <ion-icon slot="end" name="search"></ion-icon>
-        Ver
-      </ion-button>
-    </ion-item>
+    
   </ion-list>
 </ion-content>

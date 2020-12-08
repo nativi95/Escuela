@@ -1,19 +1,22 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+    </ion-buttons>
     <ion-title>Información de alumno</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card *ngIf="alumno">
     <ion-card-header>
       <ion-label>
-        <b>Nombre: </b> Nombre Apellidos
+        <b>Nombre: </b> {{alumno.Nombre}} {{alumno.Apellidos}}
       </ion-label>
     </ion-card-header>
     <ion-card-content>
       <ion-label>
-        <b>Carnet: </b>carnet
+        <b>Carnet: </b>{{alumno.Carnet}}
       </ion-label>
       <ion-row>
         <ion-col>

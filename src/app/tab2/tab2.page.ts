@@ -1,4 +1,10 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
+import {Observable} from 'rxjs';
+import {AlumnoService} from '../sevices/alumno.service';
+
+
+
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +13,12 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  alumnos: Observable<any>;
+  constructor(private alumnoService: AlumnoService, private route: Router) {
+    this.alumnos=this.alumnoService.GetAlumnos();
+  }
+
+
+  ngOnInit(){}
 
 }
