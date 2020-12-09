@@ -1,4 +1,7 @@
+import { AutorService } from './../services/autor.service';
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +10,12 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  autores: Observable<any>;
+  constructor(private autorService: AutorService) {
+    this.autores = this.autorService.GetAutores();
+  }
+
+  
 
 }
+

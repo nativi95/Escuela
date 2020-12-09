@@ -9,27 +9,32 @@
 
 <ion-content>
   <ion-card *ngIf="alumno">
-    <ion-card-header>
-      <ion-label>
-        <b>Nombre: </b> {{alumno.Nombre}} {{alumno.Apellidos}}
-      </ion-label>
-    </ion-card-header>
+
     <ion-card-content>
-      <ion-label>
-        <b>Carnet: </b>{{alumno.Carnet}}
-      </ion-label>
-      <ion-row>
-        <ion-col>
-          <ion-button size="small" fill="clear" color="success">
-            <ion-icon slot="end" name="create"></ion-icon>
-            Editar
-          </ion-button>
-          <ion-button size="small" fill="clear" color="danger">
-            <ion-icon slot="end" name="trash"></ion-icon>
-            Eliminar
-          </ion-button>
-        </ion-col>
-      </ion-row>
+      <form [formGroup]="formUpdate" (ngSubmit)="UpdateAlumno()">
+        <ion-item>
+          <ion-label position="stacked">Nombre</ion-label>
+          <ion-input type="text" formControlName="Nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Apellidos</ion-label>
+          <ion-input type="text" formControlName="Apellidos"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Carnet</ion-label>
+          <ion-input type="text" formControlName="Carnet"></ion-input>
+        </ion-item>
+        <ion-input type="number" formControlName="IdAlumno" hidden="true" readonly="true"></ion-input>
+
+        <ion-button expand="block" type="submit" [disabled]="!formUpdate.valid" size="small" color="success">
+          <ion-icon slot="end" name="create"></ion-icon>
+          Editar
+        </ion-button>
+      </form>
+      <ion-button (click)="DeleteAlumno()" expand="block" size="small" color="danger">
+        <ion-icon slot="end"  name="trash"></ion-icon>
+        Eliminar
+      </ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

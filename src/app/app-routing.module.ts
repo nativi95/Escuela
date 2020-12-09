@@ -11,10 +11,6 @@ const routes: Routes = [
     loadChildren: () => import('./agregar/agregar.module').then( m => m.AgregarPageModule)
   },
   {
-    path: 'update',
-    loadChildren: () => import('./update/update.module').then( m => m.UpdatePageModule)
-  },
-  {
     path: 'profile/:id',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   }

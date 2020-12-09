@@ -9,23 +9,23 @@
 <ion-content [fullscreen]="true">
 
   <div class="ion-padding">
-    <ion-list>
+    <ion-list *ngFor='let autor of (autores|async)'>
       <ion-item>
         <ion-avatar slot="start">
-          <img src="../../assets/img/36d46285c8bc86c5f0d9238275887f88.png" />
+          <img src="../../assets/img/{{autor.Carnet}}.jpg" />
         </ion-avatar>
         <ion-label>
           <b>
             Autor:
           </b>
-          Nombre
+          {{autor.Nombre}}
 
           <br />
           <p>
             <b>
               Carnet:
             </b>
-            carnet
+            {{autor.Carnet}}
 
           </p>
         </ion-label>
@@ -46,5 +46,4 @@
       veniam dignissimos quam.
     </p>
   </div>
-
 </ion-content>
