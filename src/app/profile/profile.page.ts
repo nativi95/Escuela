@@ -22,6 +22,11 @@ export class ProfilePage implements OnInit {
   formUpdate: FormGroup;
   private formProcess;
 
+  /**
+     * @autor Juan Carlos Ruiz Nativi
+     * @Carnet RN100216
+     * metodo constructor que inicia el formulario y la variable que se procesara
+     */
   constructor(
     private toastCtrl: ToastController,
     public formBuilder: FormBuilder,
@@ -35,6 +40,11 @@ export class ProfilePage implements OnInit {
 
   }
 
+  /**
+     * @autor Juan Carlos Ruiz Nativi
+     * @Carnet RN100216
+     * metodo que define la estructura de el Form
+     */
   private createForm() {
     return this.formBuilder.group({
       IdAlumno: ["", Validators.required],
@@ -44,6 +54,11 @@ export class ProfilePage implements OnInit {
     });
   }
 
+  /**
+     * @autor Juan Carlos Ruiz Nativi
+     * @Carnet RN100216
+     * metodo que direcciona la informacion al servicio para poder actualizar un alumno, imprime en pantalla el resultado de la peticion
+     */
   UpdateAlumno() {
     this.formProcess = this.formUpdate.value;
     console.log(this.formUpdate.value);
@@ -58,6 +73,11 @@ export class ProfilePage implements OnInit {
     });
   }
 
+  /**
+     * @autor Juan Carlos Ruiz Nativi
+     * @Carnet RN100216
+     * metodo que recupera el ID del parametro de viaje y llena el formulario
+     */
   ngOnInit() {
     let id = this.activatedRoute.snapshot.paramMap.get('id');
     this.alumnoService.GetAlumno(id).subscribe(resultado => {
@@ -70,6 +90,14 @@ export class ProfilePage implements OnInit {
     });
   }
 
+
+  /**
+     * @autor Juan Carlos Ruiz Nativi
+     * @Carnet RN100216
+     * @param msj mensaje a imprimir
+     * @param style establece el color del color del toast
+     * metodo que imprime en pantalla un mensaje TOAST
+     */
   async presentToast(msj: string, style: string) {
     const TOAST = await this.toastCtrl.create(
       {
@@ -82,12 +110,23 @@ export class ProfilePage implements OnInit {
     TOAST.present();
   }
 
+  /**
+     * @autor Juan Carlos Ruiz Nativi
+     * @Carnet RN100216
+     *metodo que ejecuta el alerta para eliminar un registro
+     */
   public DeleteAlumno() {
     this.formProcess = this.formUpdate.value;
     this.presentAlertConfirm(this.formProcess['IdAlumno']);
 
   }
 
+  /**
+     * @autor Juan Carlos Ruiz Nativi
+     * @Carnet RN100216
+     * @param id estable el id del alumnos
+     * metodo que establece un alertconfirm para eliminar un registro de alumno
+     */
   async presentAlertConfirm($id) {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',

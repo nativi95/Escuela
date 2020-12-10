@@ -13,15 +13,32 @@ import { AlumnoService } from '../services/alumno.service';
 })
 export class Tab2Page {
 
+
   alumnos: Observable<any>;
+  /**
+     * @autor Juan Carlos Ruiz Nativi
+     * @Carnet RN100216
+     * metodo constructor que llena la informacion de la vista al iniciar
+     */
   constructor(private alumnoService: AlumnoService, private route: Router) {
     this.alumnos = this.alumnoService.GetAlumnos();
   }
 
+
+  /**
+     * @autor Juan Carlos Ruiz Nativi
+     * metodo que direcciona a la pagina agregar
+     */
   GoCreate() {
     this.route.navigateByUrl("agregar");
   }
 
+  /**
+     * @autor Juan Carlos Ruiz Nativi
+     * @Carnet RN100216
+     * @param evento evento que permitira activar un metodo load
+     * metodo reconoce un evento para poder refrescar la informacion
+     */
   doRefresh(event) {
     console.log('Begin async operation');
     this.LoadData();
@@ -31,7 +48,12 @@ export class Tab2Page {
     }, 2000);
   }
 
-  async LoadData(){
+  /**
+     * @autor Juan Carlos Ruiz Nativi
+     * @Carnet RN100216
+     * metodo refresca la informacion
+     */
+  async LoadData() {
     this.alumnos = this.alumnoService.GetAlumnos();
   }
 

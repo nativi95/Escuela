@@ -17,9 +17,14 @@ export class AgregarPage implements OnInit {
   formCreate: FormGroup;
   private formProcess: Alumno;
 
-  private const SUCCESS="success";
-  private const DANGER="danger";
+  private readonly SUCCESS="success";
+  private readonly DANGER="danger";
 
+  /**
+     * @autor Juan Carlos Ruiz Nativi
+     * @Carnet RN100216
+     * metodo constructor que inicia el formulario y la variable que se procesara
+     */
   constructor(
     private formBuilder: FormBuilder,
     private toastCtrl: ToastController,
@@ -29,6 +34,11 @@ export class AgregarPage implements OnInit {
     this.formProcess = new Alumno();
   }
 
+  /**
+     * @autor Juan Carlos Ruiz Nativi
+     * @Carnet RN100216
+     * metodo que define la estructura de el Form
+     */
   private createForm() {
     return this.formBuilder.group({
       Nombre: ["", Validators.required],
@@ -37,6 +47,11 @@ export class AgregarPage implements OnInit {
     });
   }
 
+   /**
+     * @autor Juan Carlos Ruiz Nativi
+     * @Carnet RN100216
+     * metodo que direcciona la informacion al servicio para poder crear un alumno, imprime en pantalla el resultado de la peticion
+     */
   CreateAlumno() {
     this.formProcess = this.formCreate.value;
     console.log(this.formProcess)
@@ -52,6 +67,14 @@ export class AgregarPage implements OnInit {
       this.formCreate = this.createForm();
     })
   }
+
+   /**
+     * @autor Juan Carlos Ruiz Nativi
+     * @Carnet RN100216
+     * @param msj mensaje a imprimir
+     * @param style establece el color del color del toast
+     * metodo que imprime en pantalla un mensaje TOAST
+     */
 
   async presentToast(msj: string, style: string) {
     const TOAST = await this.toastCtrl.create(
